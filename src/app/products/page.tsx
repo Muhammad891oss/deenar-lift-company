@@ -69,7 +69,7 @@ export default function ProductsPage() {
                   <dl className="mt-7 grid grid-cols-2 gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-4">
                     {product.specs.map((spec) => (
                       <div key={spec.label} className="bg-[#0b0b0e] px-4 py-4 transition-colors duration-300 hover:bg-[#131316]">
-                        <dt className="text-[11px] uppercase tracking-wider text-zinc-500">
+                        <dt className="text-[11px] uppercase tracking-wider text-zinc-400">
                           {spec.label}
                         </dt>
                         <dd className="mt-1 text-sm font-semibold text-zinc-100">

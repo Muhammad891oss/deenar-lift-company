@@ -79,7 +79,7 @@ export default function ContactPage() {
                 <h2 className="text-2xl font-bold tracking-tight text-white">
                   Direct contact
                 </h2>
-                <p className="mt-2 text-sm text-zinc-500">
+                <p className="mt-2 text-sm text-zinc-400">
                   Prefer to reach us directly? Any of these channels works.
                 </p>
               </Reveal>
@@ -100,7 +100,7 @@ export default function ContactPage() {
                         {card.lines.map((line, j) => (
                           <span
                             key={line}
-                            className={`block text-sm ${j === 0 ? "text-zinc-300" : "text-zinc-500"}`}
+                            className={`block text-sm ${j === 0 ? "text-zinc-300" : "text-zinc-400"}`}
                           >
                             {line}
                           </span>

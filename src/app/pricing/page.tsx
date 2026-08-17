@@ -88,7 +88,7 @@ export default function PricingPage() {
             <div className="mt-14 overflow-x-auto border border-white/10">
               <table className="w-full min-w-[720px] text-left text-sm">
                 <thead>
-                  <tr className="border-b border-white/10 text-[11px] uppercase tracking-wider text-zinc-500">
+                  <tr className="border-b border-white/10 text-[11px] uppercase tracking-wider text-zinc-400">
                     <th className="px-6 py-4 font-semibold">Configuration</th>
                     <th className="px-6 py-4 font-semibold">Capacity</th>
                     <th className="px-6 py-4 font-semibold">Stops</th>
@@ -111,7 +111,7 @@ export default function PricingPage() {
                         <td className="px-6 py-4 capitalize text-zinc-400">
                           {sample.finishId}
                         </td>
-                        <td className="px-6 py-4 text-right font-semibold text-zinc-100">
+                        <td className="px-6 py-4 text-right font-mono font-semibold text-zinc-100">
                           {formatPKRCompact(result.low)} — {formatPKRCompact(result.high)}
                         </td>
                       </tr>
@@ -121,7 +121,7 @@ export default function PricingPage() {
               </table>
             </div>
           </Reveal>
-          <p className="mt-4 text-xs text-zinc-600">
+          <p className="mt-4 text-xs text-zinc-400">
             Indicative figures for budgeting only. Final pricing is confirmed after a
             free site survey and is subject to PKR exchange-rate movements on imported
             components.

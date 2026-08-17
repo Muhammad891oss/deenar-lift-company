@@ -32,7 +32,7 @@ export default function BlogPage() {
                     <span className="rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 font-semibold text-brand-500">
                       {post.category}
                     </span>
-                    <span className="text-zinc-500">{post.readTime}</span>
+                    <span className="text-zinc-400">{post.readTime}</span>
                   </div>
                   <h2 className="mt-5 text-xl font-bold leading-snug tracking-tight text-white transition-colors group-hover:text-brand-400">
                     {post.title}
@@ -41,7 +41,7 @@ export default function BlogPage() {
                     {post.excerpt}
                   </p>
                   <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
-                    <span className="text-xs text-zinc-500">
+                    <span className="text-xs text-zinc-400">
                       {new Date(post.date).toLocaleDateString("en-PK", {
                         day: "numeric",
                         month: "long",

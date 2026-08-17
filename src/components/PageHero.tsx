@@ -34,11 +34,11 @@ export default function PageHero({ eyebrow, title, description, crumb, image }: 
 
       <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24">
         <Reveal>
-          <nav className="flex items-center gap-2 text-xs text-zinc-500">
+          <nav className="flex items-center gap-2 text-xs text-zinc-400">
             <Link href="/" className="transition-colors hover:text-brand-500">
               Home
             </Link>
-            <span className="text-zinc-700">/</span>
+            <span className="text-zinc-600" aria-hidden="true">/</span>
             <span className="text-zinc-300">{crumb}</span>
           </nav>
           <div className="mt-6 flex items-center gap-3">

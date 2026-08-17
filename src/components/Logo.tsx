@@ -29,7 +29,7 @@ export default function Logo({ className = "" }: LogoProps) {
         <span className="block text-lg font-bold tracking-tight text-white">
           Deenar <span className="text-brand-500">Lift</span>
         </span>
-        <span className="block text-[10px] font-medium uppercase tracking-[0.28em] text-zinc-500">
+        <span className="block text-[10px] font-medium uppercase tracking-[0.28em] text-zinc-400">
           Company
         </span>
       </span>

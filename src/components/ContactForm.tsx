@@ -120,7 +120,7 @@ export default function ContactForm() {
   };
 
   const inputClass = (hasError?: string) =>
-    `w-full rounded-md border bg-[#0b0b0e] px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-1 ${
+    `w-full rounded-md border bg-[#0b0b0e] px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:ring-1 ${
       hasError
         ? "border-red-500/50 focus:border-red-500 focus:ring-red-500/30"
         : "border-white/10 focus:border-brand-500 focus:ring-brand-500/40"
@@ -165,7 +165,9 @@ export default function ContactForm() {
             </label>
             <input
               id="name"
+              name="name"
               type="text"
+              autoComplete="name"
               value={form.name}
               onChange={update("name")}
               onBlur={validateOnBlur("name")}
@@ -187,7 +189,10 @@ export default function ContactForm() {
             </label>
             <input
               id="phone"
+              name="phone"
               type="tel"
+              autoComplete="tel"
+              inputMode="tel"
               value={form.phone}
               onChange={update("phone")}
               onBlur={validateOnBlur("phone")}
@@ -209,7 +214,10 @@ export default function ContactForm() {
             </label>
             <input
               id="email"
+              name="email"
               type="email"
+              autoComplete="email"
+              inputMode="email"
               value={form.email}
               onChange={update("email")}
               onBlur={validateOnBlur("email")}
@@ -231,6 +239,7 @@ export default function ContactForm() {
             </label>
             <select
               id="subject"
+              name="subject"
               value={form.subject}
               onChange={update("subject")}
               className="w-full rounded-md border border-white/10 bg-[#0b0b0e] px-4 py-3 text-sm text-zinc-100 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500/40"
@@ -252,21 +261,22 @@ export default function ContactForm() {
             Your message <span className="text-brand-500">*</span>
           </label>
           <textarea
-              id="message"
-              rows={5}
-              value={form.message}
-              onChange={update("message")}
-              onBlur={validateOnBlur("message")}
-              placeholder="Tell us about your building, number of floors, required capacity, and any other details…"
-              aria-invalid={errors.message ? true : undefined}
-              aria-describedby={errors.message ? "message-error" : undefined}
-              className={inputClass(errors.message)}
-            />
-            {errors.message && (
-              <p id="message-error" role="alert" className="mt-1 text-xs text-red-400">
-                {errors.message}
-              </p>
-            )}
+            id="message"
+            name="message"
+            rows={5}
+            value={form.message}
+            onChange={update("message")}
+            onBlur={validateOnBlur("message")}
+            placeholder="Tell us about your building, number of floors, required capacity, and any other details…"
+            aria-invalid={errors.message ? true : undefined}
+            aria-describedby={errors.message ? "message-error" : undefined}
+            className={inputClass(errors.message)}
+          />
+          {errors.message && (
+            <p id="message-error" role="alert" className="mt-1 text-xs text-red-400">
+              {errors.message}
+            </p>
+          )}
         </div>
 
         <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
@@ -299,7 +309,7 @@ export default function ContactForm() {
               </>
             )}
           </button>
-          <p className="text-xs text-zinc-500">
+          <p className="text-xs text-zinc-400">
             Your enquiry opens in WhatsApp so you can review it before sending.
           </p>
         </div>

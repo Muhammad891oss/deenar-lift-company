@@ -42,15 +42,15 @@ export default async function BlogPostPage({
   return (
     <>
       <article className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
-        <nav className="flex items-center gap-2 text-xs text-zinc-500">
+        <nav className="flex items-center gap-2 text-xs text-zinc-400">
           <Link href="/" className="hover:text-brand-500">
             Home
           </Link>
-          <span>/</span>
+          <span aria-hidden="true">/</span>
           <Link href="/blog" className="hover:text-brand-500">
             Blog
           </Link>
-          <span>/</span>
+          <span aria-hidden="true">/</span>
           <span className="text-zinc-300">{post.category}</span>
         </nav>
 
@@ -59,8 +59,8 @@ export default async function BlogPostPage({
             <span className="rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 font-semibold text-brand-500">
               {post.category}
             </span>
-            <span className="text-zinc-500">{post.readTime}</span>
-            <span className="text-zinc-500">
+            <span className="text-zinc-400">{post.readTime}</span>
+            <span className="text-zinc-400">
               {new Date(post.date).toLocaleDateString("en-PK", {
                 day: "numeric",
                 month: "long",

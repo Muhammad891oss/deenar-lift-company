@@ -24,6 +24,20 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -40,7 +54,7 @@ export default function Navbar() {
           scrolled ? "lg:hidden" : ""
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 text-xs text-zinc-500">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 text-xs text-zinc-400">
           <div className="flex items-center gap-7">
             <a
               href={site.phoneHref}
@@ -77,7 +91,7 @@ export default function Navbar() {
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -103,8 +117,9 @@ export default function Navbar() {
 
         <button
           type="button"
-          aria-label="Toggle menu"
+          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
+          aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
           className="flex h-11 w-11 items-center justify-center rounded-md text-zinc-200 hover:bg-white/5 lg:hidden"
         >
@@ -121,7 +136,11 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <nav className="border-t border-white/10 bg-[#08080a] px-6 pb-8 pt-3 lg:hidden">
+        <nav
+          id="mobile-nav"
+          aria-label="Mobile"
+          className="mobile-menu-enter border-t border-white/10 bg-[#08080a] px-6 pb-8 pt-3 lg:hidden"
+        >
           {navLinks.map((link, i) => (
             <Link
               key={link.href}
@@ -132,7 +151,7 @@ export default function Navbar() {
               }`}
             >
               {link.label}
-              <svg viewBox="0 0 24 24" className="h-4 w-4 text-zinc-600" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <svg viewBox="0 0 24 24" className="h-4 w-4 text-zinc-500" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9 6l6 6-6 6" />
               </svg>
             </Link>
@@ -143,7 +162,7 @@ export default function Navbar() {
           >
             Get a Quote
           </Link>
-          <div className="mt-6 flex items-center justify-between text-xs text-zinc-500">
+          <div className="mt-6 flex items-center justify-between text-xs text-zinc-400">
             <a href={site.phoneHref} className="hover:text-brand-500">
               {site.phone}
             </a>

@@ -127,12 +127,12 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={320}>
-              <div className="mt-10 flex flex-wrap items-center gap-x-2 gap-y-2 text-xs text-zinc-500">
+              <div className="mt-10 flex flex-wrap items-center gap-x-2 gap-y-2 text-xs text-zinc-400">
                 {["Passenger", "Home", "Freight", "Hospital", "Panoramic", "Escalators"].map(
                   (item, i, arr) => (
                     <span key={item} className="flex items-center gap-2">
-                      <span className="text-zinc-300">{item}</span>
-                      {i < arr.length - 1 && <span className="text-zinc-700">/</span>}
+                      <span className="text-zinc-200">{item}</span>
+                      {i < arr.length - 1 && <span className="text-zinc-600">/</span>}
                     </span>
                   )
                 )}
@@ -160,10 +160,10 @@ export default function Home() {
             {capabilities.map((cap, i) => (
               <Reveal key={cap.label} delay={i * 80} className="group border-b border-white/10 bg-[#08080a]">
                 <div className="px-2 py-6 transition-transform duration-300 group-hover:-translate-y-1 lg:py-8">
-                  <p className="text-2xl font-bold tracking-tight text-white transition-colors group-hover:text-brand-400 sm:text-3xl">
+                  <p className="font-mono text-2xl font-bold tracking-tight text-white transition-colors group-hover:text-brand-400 sm:text-3xl">
                     {cap.value}
                   </p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-zinc-500">
+                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-zinc-400">
                     {cap.label}
                   </p>
                 </div>
@@ -254,7 +254,7 @@ export default function Home() {
                     <h3 className="text-lg font-semibold text-white transition-colors group-hover:text-brand-400">
                       {product.name}
                     </h3>
-                    <p className="mt-1.5 text-sm text-zinc-500">{product.tagline}</p>
+                    <p className="mt-1.5 text-sm text-zinc-400">{product.tagline}</p>
                   </div>
                 </Link>
               </Reveal>
@@ -292,7 +292,7 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-5 left-6 border border-white/10 bg-[#101013] px-5 py-3">
                 <p className="text-sm font-semibold text-white">In-house manufacturing</p>
-                <p className="text-xs text-zinc-500">Korangi Industrial Area, Karachi</p>
+                <p className="text-xs text-zinc-400">Korangi Industrial Area, Karachi</p>
               </div>
             </div>
           </Reveal>
